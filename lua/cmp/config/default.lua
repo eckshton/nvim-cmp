@@ -105,12 +105,14 @@ return function()
         col_offset = 0,
         side_padding = 1,
         scrollbar = true,
+        enabled = true,
       },
       documentation = {
         max_height = math.floor(WIDE_HEIGHT * (WIDE_HEIGHT / vim.o.lines)),
         max_width = math.floor((WIDE_HEIGHT * 2) * (vim.o.columns / (WIDE_HEIGHT * 2 * 16 / 9))),
         border = { '', '', '', ' ', '', '', '', ' ' },
         winhighlight = 'FloatBorder:NormalFloat',
+        enabled = true,
       },
     },
   }
