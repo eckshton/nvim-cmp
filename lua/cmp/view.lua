@@ -236,10 +236,9 @@ view.on_entry_change = async.throttle(function(self)
       end)
     end
     e:resolve(vim.schedule_wrap(self.resolve_dedup(function()
-      if not self:visible() then
-        return
+      if self:visible() then
+        self.docs_view:open(e, self:_get_entries_view():info())
       end
-      self.docs_view:open(e, self:_get_entries_view():info())
     end)))
   else
     self.docs_view:close()
