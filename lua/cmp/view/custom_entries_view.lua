@@ -117,6 +117,9 @@ custom_entries_view.is_direction_top_down = function(self)
 end
 
 custom_entries_view.open = function(self, offset, entries)
+  if not completion then
+    return
+  end
   local completion = config.get().window.completion
   self.offset = offset
   self.entries = {}
@@ -190,10 +193,6 @@ custom_entries_view.open = function(self, offset, entries)
     if preselect_index ~= 0 then
       preselect_index = #self.entries - preselect_index + 1
     end
-  end
-
-  if not completion then
-    return
   end
 
   -- Apply window options (that might be changed) on the custom completion menu.
